@@ -1,1 +1,67 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+   const char* dirName[7] = {
+      "왼쪽 위", "왼쪽", "왼쪽 아래", "중앙", "오른쪽 위", "오른쪽", "오른쪽 아래"
+   };
+   
+   int p1Score = 0, p2Score = 0;
+   int p1Saves = 0, p2Saves = 0;
+   int round = 1;
+
+   printf("방향 번호: 1.왼위 2.왼 3.왼아 4.중앙 5.우위 6.우 7.우아\n\n");
+
+   while (round <= 5 || p1Score == p2Score) {
+      if (round > 5) {
+         printf("\n[ 서든데스 %d라운드 ]\n", round);
+      }
+      else {
+         printf("\n[ ROUND %d / 5 ]", round);
+      }
+
+      for (int turn = 0; turn < 2; turn++) {
+         int shot = 0, keep = 0;
+
+         if (turn == 0) printf("\n[Player 1 키커 vs Player2 골키퍼]\n");
+         else           printf("\n[Player 2 키커 vs Player1 골키퍼]\n");
+
+         do {
+            printf("키커 슛 방향 입력 (1~7): ");
+            scanf("%d", &shot);
+         } while (shot < 1 || shot > 7);
+
+         for (int i = 0; i < 40; i++)
+            printf("\n");
+
+         do {
+            printf("골키퍼 막을 방향 입력 (1~7): ");
+            scanf("%d", &keep);
+         } while (keep < 1 || keep>7);
+
+         printf("\n<< 키커:[%s] vs 골키퍼:[%s]\n", dirName[shot - 1], dirName[keep - 1]);
+
+         if (shot != keep) {
+            printf(">> GOAL!! <<\n");
+            if (turn == 0) p1Score++;
+            else           p2Score++;
+         }
+         else {
+            printf(">> SAVED!! <<\n");
+            if (turn == 0) p2Saves++;
+            else           p1Saves++;
+         }
+
+         printf("현재 점수 -> Player 1: %d골(선방 %d) vs Player 2: %d골(선방 %d)\n", p1Score, p1Saves, p2Score, p2Saves);
+      }
+      round++;
+   }
+
+   printf("\n");
+   if (p1Score > p2Score) printf(" 최종 우승: Player 1!! (%d : %d)\n", p1Score, p2Score);
+   else                   printf(" 최종 우승: Player 2!! (%d : %d)\n", p1Score, p2Score);
+   printf("\n");
+
+   return 0;
+}
 
