@@ -3,7 +3,7 @@
 
 int main() {
     const char* dirName[7] = {
-       "왼쪽 위", "왼쪽", "왼쪽 아래", "중앙", "오른쪽 위", "오른쪽", "오른쪽 아래"
+       '↖', '←', '↙',  '↕', '↗', '→', '↘'
     };
 
     int p1Score = 0, p2Score = 0;
@@ -25,7 +25,7 @@ int main() {
             else           printf("\n[Player 2 키커 vs Player1 골키퍼]\n");
 
             do {
-                printf("\n방향 번호: 1.왼위 2.왼 3.왼아 4.중앙 5.우위 6.우 7.우아\n\n");
+                printf("\n방향 번호: 1. ↖, 2. ←, 3. ↙, 4. ↕, 5.↗, 6. →, 7. ↘ \n\n");
                 printf("키커 슛 방향 입력 (1~7): ");
                 scanf("%d", &shot);
             } while (shot < 1 || shot > 7);
@@ -34,7 +34,7 @@ int main() {
                 printf("\n");
 
             do {
-                printf("\n방향 번호: 1.왼위 2.왼 3.왼아 4.중앙 5.우위 6.우 7.우아\n\n");
+                printf("\n방향 번호:1. ↖, 2. ←, 3. ↙, 4. ↕, 5.↗, 6. →, 7. ↘\n\n");
                 printf("골키퍼 막을 방향 입력 (1~7): ");
                 scanf("%d", &keep);
             } while (keep < 1 || keep>7);
