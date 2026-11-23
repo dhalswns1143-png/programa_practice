@@ -62,6 +62,6 @@ int main() {
    else                   printf(" 최종 우승: Player 2!! (%d : %d)\n", p1Score, p2Score);
    printf("\n");
 
-   return 0;
+   getchar();
 }
 
