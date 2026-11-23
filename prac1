@@ -58,8 +58,8 @@ int main() {
    }
 
    printf("\n");
-   if (p1Score > p2Score) printf(" 최종 우승: Player 1!! (%d : %d)\n", p1Score, p2Score);
-   else                   printf(" 최종 우승: Player 2!! (%d : %d)\n", p1Score, p2Score);
+   if (p1Score > p2Score) printf(" **********최종 우승: Player 1!! (%d : %d)**********\n", p1Score, p2Score);
+   else                   printf(" **********최종 우승: Player 2!! (%d : %d)**********\n", p1Score, p2Score);
    printf("\n");
 
    getchar();
