@@ -1,4 +1,3 @@
-
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -125,6 +124,36 @@ int main() {
                         else p1Saves++;
                     }
 
+                    // 골대 및 공 위치 출력
+                    printf("\n-------------------------------------\n");
+
+                    if (shot == 1)      printf("-   O                               -\n");
+                    else if (shot == 5) printf("-                               O   -\n");
+                    else                printf("-                                   -\n");
+
+                    printf("-                                   -\n");
+
+                    if (shot != keep) {
+                        if (shot == 2)      printf("-   O          GOAL                 -\n");
+                        else if (shot == 4) printf("-             O GOAL                -\n");
+                        else if (shot == 6) printf("-              GOAL             O   -\n");
+                        else                printf("-              GOAL                 -\n");
+                    }
+                    else {
+                        if (shot == 2)      printf("-   O          SAVE                 -\n");
+                        else if (shot == 4) printf("-             O SAVE                -\n");
+                        else if (shot == 6) printf("-              SAVE             O   -\n");
+                        else                printf("-              SAVE                 -\n");
+                    }
+
+                    printf("-                                   -\n");
+
+                    if (shot == 3)      printf("-   O                               -\n");
+                    else if (shot == 7) printf("-                               O   -\n");
+                    else                printf("-                                   -\n");
+
+                    printf("\n");
+
                     printf("\n현재 점수 -> %s: %d골(선방 %d) vs %s: %d골(선방 %d)\n",
                         p1Name, p1Score, p1Saves,
                         p2Name, p2Score, p2Saves);
@@ -202,6 +231,36 @@ int main() {
                 else p1Saves++;
             }
 
+            // 골대 및 공 위치 출력
+            printf("\n-------------------------------------\n");
+
+            if (shot == 1)      printf("-   O                               -\n");
+            else if (shot == 5) printf("-                               O   -\n");
+            else                printf("-                                   -\n");
+
+            printf("-                                   -\n");
+
+            if (shot != keep) {
+                if (shot == 2)      printf("-   O          GOAL                 -\n");
+                else if (shot == 4) printf("-             O GOAL                -\n");
+                else if (shot == 6) printf("-              GOAL             O   -\n");
+                else                printf("-              GOAL                 -\n");
+            }
+            else {
+                if (shot == 2)      printf("-   O          SAVE                 -\n");
+                else if (shot == 4) printf("-             O SAVE                -\n");
+                else if (shot == 6) printf("-              SAVE             O   -\n");
+                else                printf("-              SAVE                 -\n");
+            }
+
+            printf("-                                   -\n");
+
+            if (shot == 3)      printf("-   O                               -\n");
+            else if (shot == 7) printf("-                               O   -\n");
+            else                printf("-                                   -\n");
+
+            printf("\n");
+
         }
 
         // 최종 결과
@@ -214,7 +273,7 @@ int main() {
             printf("********** 최종 우승: %s!! (%d : %d) **********\n",
                 p2Name, p1Score, p2Score);
         else
-            printf("무승부입니다!\n");
+            printf("%s 승!!\n", p2Name);
 
 
         // 재시작 여부
